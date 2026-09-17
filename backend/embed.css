@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root,
+.gradio-container,
+.dark {
+    /* Project Design Tokens */
+    --ink: #140F26;
+    --panel: #1D1640;
+    --panel-2: #191233;
+    --panel-user: #2B2350;
+    --hairline: #3A2E63;
+    --hairline-soft: #2B2350;
+    --text: #F6F4FF;
+    --text-muted: #AFA3D9;
+    --human: #FF6F91;
+    --human-dim: #B34F68;
+    --twin: #3DFFC0;
+    --twin-dim: #2AAF86;
+    --radius: 10px;
+
+    /* Gradio Native Theme Variables Override */
+    --body-background-fill: #140F26 !important;
+    --background-fill-primary: #140F26 !important;
+    --background-fill-secondary: #1D1640 !important;
+    --color-accent-soft: #2B2350 !important;
+    --color-accent: #3DFFC0 !important;
+    --border-color-primary: #3A2E63 !important;
+    --border-color-accent: #3DFFC0 !important;
+    --border-color-accent-subdued: #3A2E63 !important;
+    --body-text-color: #F6F4FF !important;
+    --body-text-color-subdued: #AFA3D9 !important;
+    --color-text-link: #3DFFC0 !important;
+    --block-background-fill: #140F26 !important;
+    --block-border-color: #3A2E63 !important;
+    --input-background-fill: #191233 !important;
+    --input-border-color: #3A2E63 !important;
+    --input-border-color-focus: #3DFFC0 !important;
+    --input-placeholder-color: #AFA3D9 !important;
+    --button-primary-background-fill: #3DFFC0 !important;
+    --button-primary-text-color: #140F26 !important;
+    --shadow-drop: none !important;
+}
+
+/* Base resets & typography */
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+code,
+pre,
+.mono {
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* Hide unneeded Gradio UI headers, footers & auxiliary controls */
+.examples,
+.example-dropdown,
+footer,
+footer.footer,
+.built-with,
+button[aria-label="Clear"],
+button[aria-label="clear"],
+button[aria-label="Retry"],
+button[aria-label="retry"],
+button[aria-label="Undo"],
+button[aria-label="undo"],
+button[aria-label="Stop"],
+button[aria-label="stop"],
+button[data-testid="clear-button"],
+button[data-testid="retry-button"],
+button[data-testid="undo-button"],
+.chatbot .share-button,
+.chatbot .copy-button {
+    display: none !important;
+}
+
+/* Background blending */
+html,
+body,
+.gradio-container,
+.gradio-container>div,
+.app {
+    background: var(--ink) !important;
+    background-color: var(--ink) !important;
+    color: var(--text) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100% !important;
+}
+
+.gradio-container {
+    padding: 12px 16px !important;
+    max-width: 100% !important;
+}
+
+/* Reset all outer containers & wrappers to transparent so they DO NOT draw duplicate boxes */
+.chatbot,
+[data-testid="chatbot"],
+.chatbot>.wrap,
+.panel-wrap,
+.bubble-wrap,
+.message-wrap,
+.message-row,
+[data-testid="user"],
+[data-testid="bot"],
+.message-bubble-border,
+.message-content {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Message row spacing */
+.message-row {
+    margin-bottom: 14px !important;
+}
+
+/* ----------------------------------------------------
+   ONLY THE SINGLE INNER BUBBLE RECEIVES BACKGROUND & BORDER
+   ---------------------------------------------------- */
+.chatbot .bot,
+.bot.svelte-1nr59td {
+    background: linear-gradient(145deg, #1D1640 0%, #171133 100%) !important;
+    background-color: var(--panel) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--hairline) !important;
+    border-left: 3px solid var(--twin) !important;
+    border-radius: var(--radius) !important;
+    border-bottom-left-radius: 2px !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3), 0 0 16px rgba(61, 255, 192, 0.06) !important;
+    padding: 12px 18px !important;
+    max-width: 85% !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.chatbot .user,
+.user.svelte-1nr59td {
+    background: linear-gradient(145deg, #2E1B4E 0%, #25143F 100%) !important;
+    background-color: var(--panel-user) !important;
+    color: var(--text) !important;
+    border: 1px solid rgba(255, 111, 145, 0.3) !important;
+    border-right: 3px solid var(--human) !important;
+    border-radius: var(--radius) !important;
+    border-bottom-right-radius: 2px !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3), 0 0 16px rgba(255, 111, 145, 0.08) !important;
+    padding: 12px 18px !important;
+    max-width: 85% !important;
+    margin-left: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ensure contents inside the bubble do not inherit extra borders/backgrounds */
+.chatbot .bot>*,
+.chatbot .user>*,
+.chatbot .bot .prose,
+.chatbot .user .prose,
+.chatbot .bot p,
+.chatbot .user p {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--text) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.chatbot .message a,
+.chatbot .prose a {
+    color: var(--twin) !important;
+    text-decoration: underline !important;
+}
+
+/* Code blocks inside message */
+.chatbot .prose code,
+.chatbot .message code {
+    background: var(--panel-2) !important;
+    background-color: var(--panel-2) !important;
+    border: 1px solid var(--hairline-soft) !important;
+    color: var(--twin) !important;
+    border-radius: 6px !important;
+    padding: 2px 6px !important;
+    display: inline-block;
+}
+
+.chatbot .prose pre,
+.chatbot .message pre {
+    background: var(--panel-2) !important;
+    border: 1px solid var(--hairline-soft) !important;
+    border-radius: 6px !important;
+    padding: 10px 14px !important;
+    margin: 8px 0 !important;
+    overflow-x: auto !important;
+}
+
+/* Input / Textarea container */
+form,
+.input-container,
+.input-row,
+.form,
+.textbox-container {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    gap: 8px !important;
+}
+
+/* Textarea input field */
+textarea,
+textarea[data-testid="textbox"],
+.gradio-container textarea {
+    background: var(--panel-2) !important;
+    background-color: var(--panel-2) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--hairline) !important;
+    border-radius: var(--radius) !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    box-shadow: none !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    resize: none !important;
+}
+
+textarea:focus,
+textarea[data-testid="textbox"]:focus,
+.gradio-container textarea:focus {
+    border-color: var(--twin) !important;
+    box-shadow: 0 0 0 2px rgba(61, 255, 192, 0.2) !important;
+    outline: none !important;
+}
+
+textarea::placeholder,
+.gradio-container textarea::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.75 !important;
+}
+
+/* Send / Submit button */
+button#submit,
+button[data-testid="submit-button"],
+button[aria-label="Submit"],
+button[aria-label="submit"],
+button[aria-label="Send"],
+button[aria-label="send"],
+.gradio-container button.primary,
+.submit-button {
+    background: var(--twin) !important;
+    background-color: var(--twin) !important;
+    color: var(--ink) !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border-radius: var(--radius) !important;
+    padding: 10px 18px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease !important;
+    box-shadow: 0 2px 10px rgba(61, 255, 192, 0.25) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+button#submit:hover,
+button[data-testid="submit-button"]:hover,
+button[aria-label="Submit"]:hover,
+button[aria-label="submit"]:hover,
+button[aria-label="Send"]:hover,
+button[aria-label="send"]:hover,
+.gradio-container button.primary:hover {
+    background: #5effd0 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 14px rgba(61, 255, 192, 0.4) !important;
+}
+
+button#submit:active,
+button[data-testid="submit-button"]:active {
+    transform: translateY(0) !important;
+}
+
+/* Icon / SVG inside buttons */
+button svg,
+button#submit svg {
+    stroke: var(--ink) !important;
+    fill: var(--ink) !important;
+}
+
+/* Custom Purple Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ink);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hairline);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thaís — Backend Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="twin-cursor" id="twinCursor"></div>
+
+  <header>
+    <nav class="wrap">
+      <div class="logo"><span class="status-dot"></span>THAÍS<span style="color:var(--hairline)">.dev</span></div>
+      <div class="navlinks" id="navLinks">
+        <a class="scramble" href="#sobre" data-pt-html="sobre" data-en-html="about">sobre</a>
+        <a class="scramble" href="#stack" data-pt-html="stack" data-en-html="stack">stack</a>
+        <a class="scramble" href="#twin" data-pt-html="twin_digital" data-en-html="digital_twin">twin_digital</a>
+        <a class="scramble" href="#contato" data-pt-html="contato" data-en-html="contact">contato</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="pt">🇧🇷 PT</button>
+          <button class="lang-btn" data-lang="en">🇺🇸 EN</button>
+        </div>
+        <button class="navtoggle" id="navToggle">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="hero" style="border-top:none;padding-top:56px;">
+      <div class="eyebrow" data-pt-html="engenheira de backend · python · sistemas distribuídos"
+        data-en-html="backend engineer · python · distributed systems">engenheira de backend · python · sistemas
+        distribuídos</div>
+      <div class="duo">
+        <div class="pane pane-human">
+          <div class="pane-label"><span class="dash"></span><span data-pt-html="voz humana"
+              data-en-html="human voice">voz humana</span></div>
+          <h1 class="hero-name" data-pt-html='Olá, eu sou a <em>Thaís</em>.' data-en-html='Hi, I&#39;m <em>Thaís</em>.'>
+            Olá, eu sou a <em>Thaís</em>.</h1>
+          <div class="hero-role" data-pt-html="Engenheira de Backend · Python" data-en-html="Backend Engineer · Python">
+            Engenheira de Backend · Python</div>
+          <p class="hero-bio"
+            data-pt-html="Gosto de construir coisas que resolvem problemas de verdade. Há 5+ anos trabalho com Python, seja tirando sistemas do papel ou pegando aquele legado meio sofrido e transformando em algo mais rápido, limpo e fácil de manter. No fim, pra mim, código bom é código que resolve o problema certo."
+            data-en-html="I&#39;m passionate about building things that solve real-world problems. For 5+ years, I&#39;ve worked with Python—whether building systems from scratch or taking painful legacy codebases and turning them into something faster, cleaner, and easier to maintain. In the end, to me, good code is code that solves the right problem.">
+            Gosto de construir coisas que resolvem problemas de verdade. Há 5+ anos trabalho com Python, seja tirando
+            sistemas do papel ou pegando aquele legado meio sofrido e transformando em algo mais rápido, limpo e fácil
+            de manter. No fim, pra mim, código bom é código que resolve o problema certo.</p>
+          <div class="cta-row">
+            <a href="#sobre" class="btn btn-primary" data-pt-html="conhecer minha trajetória"
+              data-en-html="see my background">conhecer minha trajetória</a>
+            <a href="#twin" class="btn btn-ghost" data-pt-html="conversar com meu twin →"
+              data-en-html="chat with my twin →">conversar com meu twin →</a>
+          </div>
+        </div>
+        <div class="pane pane-twin">
+          <div class="twin-mascot">
+            <svg id="twinFace" width="40" height="40" viewBox="0 0 52 52" aria-hidden="true">
+              <rect x="2" y="2" width="48" height="48" rx="12" fill="#191233" stroke="#3DFFC0" stroke-width="2" />
+              <ellipse class="mascot-eye-l mascot-blink" cx="17" cy="24" rx="6.5" ry="7" fill="#0d0a1a" />
+              <ellipse class="mascot-eye-r mascot-blink" cx="35" cy="24" rx="6.5" ry="7" fill="#0d0a1a" />
+              <circle id="pupilL" cx="17" cy="24" r="3" fill="#3DFFC0" />
+              <circle id="pupilR" cx="35" cy="24" r="3" fill="#3DFFC0" />
+              <rect x="16" y="36" width="20" height="3" rx="1.5" fill="#3DFFC0" />
+            </svg>
+            <div class="pane-label" style="margin-bottom:0;"><span class="dash"></span><span data-pt-html="twin digital"
+                data-en-html="digital twin">twin digital</span></div>
+          </div>
+          <div class="term-line"><span class="term-prompt">twin@thais</span>:~$ whoami</div>
+          <div class="term-out" data-pt-html='Thaís — <span class="k">Backend Engineer</span>, especialista em Python.'
+            data-en-html='Thaís — <span class="k">Backend Engineer</span>, Python specialist.'>Thaís — <span
+              class="k">Backend Engineer</span>, especialista em Python.</div>
+          <div class="term-line"><span class="term-prompt">twin@thais</span>:~$ status --disponibilidade</div>
+          <div class="term-out" data-pt-html='<span class="k">true</span> // aberta a novas oportunidades'
+            data-en-html='<span class="k">true</span> // open to new opportunities'><span class="k">true</span> //
+            aberta a novas oportunidades</div>
+          <div class="term-line"><span class="term-prompt">twin@thais</span>:~$ <span class="cursor"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE (com trajetória condensada) -->
+    <section id="sobre">
+      <div class="sec-head reveal"><span class="sec-num">01</span>
+        <h2 class="sec-title scramble" data-pt-html="Sobre" data-en-html="About">Sobre</h2>
+      </div>
+      <div class="about-grid reveal">
+        <div class="about-tag"
+          data-pt-html="// 5+ anos de backend<br>// Python · FastAPI · Flask<br>// PostgreSQL · MongoDB<br>// Docker · Kubernetes"
+          data-en-html="// 5+ years in backend<br>// Python · FastAPI · Flask<br>// PostgreSQL · MongoDB<br>// Docker · Kubernetes">
+          // 5+ anos de backend<br>// Python · FastAPI · Flask<br>// PostgreSQL · MongoDB<br>// Docker · Kubernetes
+        </div>
+        <p class="about-text"
+          data-pt-html="Sou desenvolvedora backend com mais de 5 anos de experiência construindo sistemas que precisam aguentar tráfego real, desde APIs e microsserviços até integrações entre diferentes partes de uma aplicação. Gosto de pensar na arquitetura como um todo, entender o problema de negócio e encontrar soluções que sejam eficientes, fáceis de manter e que realmente façam sentido para quem vai usá-las.<br><br>Já modernizei sistemas legados de ponta a ponta, migrando de <b>Flask para FastAPI</b> e conduzindo upgrades de versão do Python em produção, sem downtime perceptível. Também desenhei <b>integrações orientadas a eventos</b> entre múltiplos serviços e construí <b>APIs públicas escaláveis</b> aplicando princípios de <b>Domain-Driven Design</b> para organizar domínios de negócio complexos.<br><br>Gosto de pegar código legado, entender por que ele existe do jeito que existe e evoluí-lo sem quebrar o que já funciona. No fim, gosto de resolver problemas.<br><br>Fora do código: <b>amo viajar e conhecer culturas novas!</b> Também gosto de dança, jardinagem e comer comidinhas gostosas e diferentes."
+          data-en-html="I&#39;m a backend developer with over 5 years of experience building systems that need to handle real traffic, from APIs and microservices to integrations across different parts of an application. I like thinking about architecture as a whole, understanding the business domain, and finding solutions that are efficient, maintainable, and truly make sense for those who use them.<br><br>I&#39;ve modernized legacy systems end-to-end, migrating from <b>Flask to FastAPI</b> and leading Python version upgrades in production with no noticeable downtime. I&#39;ve also designed <b>event-driven integrations</b> across multiple services and built <b>scalable public APIs</b> applying <b>Domain-Driven Design</b> principles to organize complex business domains.<br><br>I like taking legacy code, understanding why it exists the way it does, and evolving it without breaking what already works. In the end, I like solving problems.<br><br>Outside of code: <b>I love traveling and exploring new cultures!</b> I also enjoy dancing, gardening, and discovering delicious food.">
+          Sou desenvolvedora backend com mais de 5 anos de experiência construindo sistemas que precisam aguentar
+          tráfego real, desde APIs e microsserviços até integrações entre diferentes partes de uma aplicação. Gosto de
+          pensar na arquitetura como um todo, entender o problema de negócio e encontrar soluções que sejam eficientes,
+          fáceis de manter e que realmente façam sentido para quem vai usá-las.
+          <br><br>
+          Já modernizei sistemas legados de ponta a ponta, migrando de <b>Flask para FastAPI</b> e conduzindo upgrades
+          de versão do Python em produção, sem downtime perceptível. Também desenhei <b>integrações orientadas a
+            eventos</b> entre múltiplos serviços e construí <b>APIs públicas escaláveis</b> aplicando princípios de
+          <b>Domain-Driven Design</b> para organizar domínios de negócio complexos.
+          <br><br>
+          Gosto de pegar código legado, entender por que ele existe do jeito que existe e evoluí-lo sem quebrar o que já
+          funciona. No fim, gosto de resolver problemas.
+          <br><br>
+          Fora do código: <b>amo viajar e conhecer culturas novas!</b> Também gosto de dança, jardinagem e comer
+          comidinhas gostosas e diferentes.
+        </p>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack">
+      <div class="sec-head reveal"><span class="sec-num">02</span>
+        <h2 class="sec-title scramble" data-pt-html="Stack" data-en-html="Stack">Stack</h2>
+      </div>
+      <div class="reveal">
+        <div class="manifest">
+          <div class="manifest-bar">
+            <span class="dot3" style="background:#ff6f91"></span>
+            <span class="dot3" style="background:#e8c25a"></span>
+            <span class="dot3" style="background:#3dffc0"></span>
+            <span style="margin-left:10px;">stack.py</span>
+          </div>
+          <div class="manifest-body">
+            <div class="code-line"><span class="code-kw">from</span> thais.stack <span class="code-kw">import</span>
+              core, infra, learning</div>
+            <div class="code-line">&nbsp;</div>
+            <div class="code-line">core = [<span class="code-str">"Python"</span>, <span
+                class="code-str">"FastAPI"</span>, <span class="code-str">"Flask"</span>, <span
+                class="code-str">"SQLAlchemy"</span>, <span class="code-str">"Celery"</span>]</div>
+            <div class="code-line">infra = [<span class="code-str">"PostgreSQL"</span>, <span
+                class="code-str">"MongoDB"</span>, <span class="code-str">"Docker"</span>, <span
+                class="code-str">"Kubernetes"</span>, <span class="code-str">"GCP"</span>]</div>
+            <div class="code-line">learning = [<span class="code-str">"AWS"</span>, <span class="code-str">"Agentic
+                AI"</span>]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TWIN DIGITAL -->
+    <section id="twin" class="twin-section" data-twin-url="http://127.0.0.1:7860">
+      <div class="sec-head reveal"><span class="sec-num">03</span>
+        <h2 class="sec-title scramble" data-pt-html="Fale com meu twin digital" data-en-html="Talk to my digital twin">
+          Fale com meu twin digital</h2>
+      </div>
+      <p class="twin-desc reveal"
+        data-pt-html="Um chatbot que responde por mim: sobre minha trajetória, stack e disponibilidade."
+        data-en-html="A chatbot that speaks for me: about my background, stack, and availability.">
+        Um chatbot que responde por mim: sobre minha trajetória, stack e disponibilidade.
+      </p>
+
+      <div class="reveal">
+        <div class="prompt-hint" data-pt-html="// perguntas que você pode fazer:"
+          data-en-html="// questions you can ask:">// perguntas que você pode fazer:</div>
+        <div class="chips-row">
+          <span class="qchip" data-pt-html="qual sua stack principal?" data-en-html="what's your main stack?">qual sua
+            stack principal?</span>
+          <span class="qchip" data-pt-html="está aberta a novas oportunidades profissionais?"
+            data-en-html="are you open to new professional opportunities?">está aberta a novas oportunidades profissionais?</span>
+          <span class="qchip" data-pt-html="conte sobre sua trajetória"
+            data-en-html="tell me about your background">conte sobre sua trajetória</span>
+          <span class="qchip" data-pt-html="como entro em contato com você?"
+            data-en-html="how can I get in touch with you?">como entro em contato com você?</span>
+        </div>
+
+        <div class="twin-wrap">
+          <div class="twin-bar">
+            <div class="who"><span class="status-dot"></span> digital-twin@thais</div>
+          </div>
+          <div class="twin-embed">
+            <iframe id="twin-iframe" class="twin-iframe" title="Digital Twin" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+      <div class="sec-head reveal"><span class="sec-num">04</span>
+        <h2 class="sec-title scramble" data-pt-html="Contato" data-en-html="Contact">Contato</h2>
+      </div>
+      <div class="reveal">
+        <p class="prompt-hint" data-pt-html="// você pode me achar através dos seguintes links:"
+          data-en-html="// you can find me through the following links:">// você pode me achar através dos seguintes
+          links:</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:10px;">THAÍS<span style="color:var(--hairline)">.dev</span></div>
+        <div class="foot-copy" data-pt-html="© 2026 — Thaís." data-en-html="© 2026 — Thaís.">© 2026 — Thaís.</div>
+      </div>
+      <div class="foot-links">
+        <a class="scramble" href="https://www.github.com/thaisnl" target="_blank" rel="noopener noreferrer">github</a>
+        <a class="scramble" href="https://www.linkedin.com/in/thaisnl" target="_blank"
+          rel="noopener noreferrer">linkedin</a>
+        <a class="scramble" href="mailto:thaisnl.programmer@gmail.com">email</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false">
+    <span class="music-icon">♪</span>
+    <span class="eq"><span></span><span></span><span></span></span>
+    <span class="label" data-pt-html="trilha do twin" data-en-html="twin's soundtrack">trilha do twin</span>
+  </button>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/effects.js"></script>
+  <script src="assets/js/twin.js"></script>
+  <script src="assets/js/audio.js"></script>
+</body>
+
+</html>
