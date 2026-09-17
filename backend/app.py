@@ -61,7 +61,7 @@ def chat(message: str, history: list[dict], request: gr.Request):
 
     extra_body = {
         "provider": {
-            "only": ["open-inference/fp8"],
+            "only": ["Groq"],
             "allow_fallbacks": True,
         }
     }
