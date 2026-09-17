@@ -59,19 +59,19 @@ def chat(message: str, history: list[dict], request: gr.Request):
             "(máximo de 10 por minuto). Por favor, aguarde alguns instantes antes de continuar."
         )
 
-    extra_body = {
-        "provider": {
-            "only": [SETTINGS.open_router.provider],
+    extra_body = {}
+    if SETTINGS.open_router.provider:
+        extra_body["provider"] = {
+            "order": [SETTINGS.open_router.provider],
             "allow_fallbacks": True,
         }
-    }
 
     messages = [format_llm_message("system", SYSTEM_PROMPT)] + history + [format_llm_message("user", message)]
     response = openai.chat.completions.create(
         model=SETTINGS.open_router.model,
         messages=messages,
         tools=tools,
-        extra_body=extra_body,
+        extra_body=extra_body if extra_body else None,
     )
     while response.choices[0].finish_reason == "tool_calls":
         message = response.choices[0].message
@@ -83,7 +83,7 @@ def chat(message: str, history: list[dict], request: gr.Request):
             model=SETTINGS.open_router.model,
             messages=messages,
             tools=tools,
-            extra_body=extra_body,
+            extra_body=extra_body if extra_body else None,
         )
     return response.choices[0].message.content
 
