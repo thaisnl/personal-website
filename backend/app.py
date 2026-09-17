@@ -29,7 +29,10 @@ DEFAULT_ALLOWED_ORIGINS = (
     "http://localhost:7860,"
     "http://127.0.0.1:7860,"
     "https://thais.dev,"
-    "https://www.thais.dev"
+    "https://www.thais.dev,"
+    "https://thaisnl.pages.dev,"
+    "https://thaisnl.thaistnl10.workers.dev,"
+    "https://thaisnl.vercel.app"
 )
 
 rate_limiter = IPRateLimiter(max_requests=10, window_seconds=60.0)
@@ -84,12 +87,16 @@ async def health_check():
     return {"status": "ok", "service": "digital-twin-backend"}
 
 
+embed_css = load_embed_css()
+embed_js = load_embed_js()
+
 app = gr.mount_gradio_app(
     app=app,
     blocks=demo,
     path="/",
-    js=load_embed_js(),
-    css=load_embed_css(),
+    head=f"<style>{embed_css}</style><script>{embed_js}</script>",
+    js=embed_js,
+    css=embed_css,
 )
 
 if __name__ == "__main__":

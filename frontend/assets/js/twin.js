@@ -3,7 +3,15 @@
   const iframe = document.getElementById("twin-iframe");
   if (!twinSection || !iframe) return;
 
-  const twinUrl = twinSection.dataset.twinUrl;
+  let twinUrl = twinSection.dataset.twinUrl;
+  const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  if (isLocal) {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("backend") !== "remote") {
+      twinUrl = "http://127.0.0.1:7860";
+    }
+  }
+
   if (!twinUrl) return;
 
   iframe.src = twinUrl;
