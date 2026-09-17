@@ -2,8 +2,10 @@ import json
 import os
 from pathlib import Path
 
+from fastapi import FastAPI
 import gradio as gr
 from openai import OpenAI
+import uvicorn
 
 from context.context import SYSTEM_PROMPT
 from settings import SETTINGS
@@ -72,12 +74,24 @@ demo = gr.ChatInterface(
     chat,
     chatbot=gr.Chatbot(show_label=False),
 )
+demo.queue(default_concurrency_limit=5)
+
+app = FastAPI(title="Thaís Digital Twin API", version="0.1.0")
+
+
+@app.get("/health")
+async def health_check():
+    return {"status": "ok", "service": "digital-twin-backend"}
+
+
+app = gr.mount_gradio_app(
+    app=app,
+    blocks=demo,
+    path="/",
+    js=load_embed_js(),
+    css=load_embed_css(),
+)
 
 if __name__ == "__main__":
-    demo.queue(default_concurrency_limit=5).launch(
-        server_name="0.0.0.0",
-        server_port=7860,
-        inbrowser=False,
-        js=load_embed_js(),
-        css=load_embed_css(),
-    )
+    port = int(os.environ.get("PORT", 7860))
+    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=False)
