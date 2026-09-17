@@ -59,8 +59,20 @@ def chat(message: str, history: list[dict], request: gr.Request):
             "(máximo de 10 por minuto). Por favor, aguarde alguns instantes antes de continuar."
         )
 
+    extra_body = {
+        "provider": {
+            "only": ["open-inference/fp8"],
+            "allow_fallbacks": True,
+        }
+    }
+
     messages = [format_llm_message("system", SYSTEM_PROMPT)] + history + [format_llm_message("user", message)]
-    response = openai.chat.completions.create(model=SETTINGS.open_router.model, messages=messages, tools=tools)
+    response = openai.chat.completions.create(
+        model=SETTINGS.open_router.model,
+        messages=messages,
+        tools=tools,
+        extra_body=extra_body,
+    )
     while response.choices[0].finish_reason == "tool_calls":
         message = response.choices[0].message
         tool_calls = message.tool_calls
@@ -68,7 +80,10 @@ def chat(message: str, history: list[dict], request: gr.Request):
         messages.append(message)
         messages.extend(called_tools_results)
         response = openai.chat.completions.create(
-            model=SETTINGS.open_router.model, messages=messages, tools=tools
+            model=SETTINGS.open_router.model,
+            messages=messages,
+            tools=tools,
+            extra_body=extra_body,
         )
     return response.choices[0].message.content
 
