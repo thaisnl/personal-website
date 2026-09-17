@@ -17,7 +17,7 @@ class OpenRouterSettings(BaseSettings):
     api_key: str = ""
     path: str = ""
     model: str = ""
-
+    provider: str = ""
 
 class TelegramSettings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix='TELEGRAM_', env_file=ENV_FILE, extra="ignore")
