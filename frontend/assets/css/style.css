@@ -724,15 +724,17 @@ section#contato {
 
 /* ---------- FOOTER ---------- */
 footer {
-    padding: 18px 0 44px;
+    padding: 36px 0 54px;
+    border-top: 1px solid var(--hairline-soft);
+    margin-top: 60px;
 }
 
 .foot-grid {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 16px;
 }
 
 .foot-links {
